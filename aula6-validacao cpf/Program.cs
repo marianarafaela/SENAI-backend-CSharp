@@ -32,43 +32,43 @@ namespace aula6_validacao_cpf
 
 
             if(   calculo >9){
-                  digito_v1       =      "0";
+                  digito_v1        =      "0";
             }else{
-                  digito_v1       =      calculo.ToString();
+                  digito_v1        =      calculo.ToString();
             }
 
             
-            if(   digito_v1       ==     cpfUsuario[9].ToString() ){
-                  resultado       =      true;
+            if(   digito_v1        ==     cpfUsuario[9].ToString() ){
+                  resultado        =      true;
             }
 
 
 
-            int[] v2              =         {11,10,9,8,7,6,5,4,3,2};
-                  resto           =         0;
+            int[] v2               =      {11,10,9,8,7,6,5,4,3,2};
+                  resto            =         0;
             
 
-            cpfcalculo            =         cpfcalculo   +  calculo;
-            calculo               =         0; 
+            cpfcalculo             =       cpfcalculo   +  calculo;
+            calculo                =       0; 
 
 
             
             for(int i=0; i<=9;i++){
-             calculo              +=        int.Parse(cpfcalculo[i].ToString()) * v2[i];
+             calculo               +=      int.Parse(cpfcalculo[i].ToString()) * v2[i];
             }
-               resto               =        calculo % 11;
-               calculo             =        11 - resto;
+               resto                =      calculo % 11;
+               calculo              =      11 - resto;
 
 
             if(calculo >9){
-               digito_v2           =         "0";
+               digito_v2            =       "0";
             }else{
-               digito_v2           =         calculo.ToString();
+               digito_v2            =       calculo.ToString();
             }
 
             
-            if(digito_v2           ==        cpfUsuario[9].ToString() ){
-               resultado           =         true;
+            if(digito_v2            ==      cpfUsuario[9].ToString() ){
+               resultado            =       true;
             }
 
 
