@@ -38,7 +38,7 @@ namespace aula5 {
                         break;
 
                     case "2":
-                        for (int i = 0; i <= 4; i++) {;
+                        for (int i = 0; i <= 4; i++) {
                             if (
                                 nome[i] != "" &&
                                 origem[i] != "" &&
