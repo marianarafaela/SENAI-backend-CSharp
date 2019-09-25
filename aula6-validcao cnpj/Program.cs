@@ -7,8 +7,8 @@ namespace aula6_validcao_cnpj
         static void Main(string[] args)
         {
             Console.WriteLine("Digite seu cnpj:  ");
-            string cnpjUsuario= Console.ReadLine();
-            Console.WriteLine(ValidarCnpj(cnpjUsuario));
+            string cnpj = Console.ReadLine();
+            Console.WriteLine(ValidarCnpj(cnpj));
         }
         static bool ValidarCnpj (string cnpjUsuario ){
             bool   resultado       =     false;
@@ -18,7 +18,11 @@ namespace aula6_validcao_cnpj
             string digito_2        =      "";
             int    resto           =      0;
             int    calculo         =      0;
-      
+
+            cnpjUsuario = cnpjUsuario.Replace(" ", "");
+            cnpjUsuario = cnpjUsuario.Replace("-", "");
+            cnpjUsuario = cnpjUsuario.Replace(".", "");      
+            cnpjUsuario = cnpjUsuario.Replace("/", "");      
 
            cnpjcalculo             =     cnpjUsuario.Substring(0,12);
 
@@ -30,7 +34,7 @@ namespace aula6_validcao_cnpj
                   calculo          =     11 - resto;
 
 
-            if(   calculo >2){
+            if(   calculo <2){
                   digito_1         =      "0";
             }else{
                   digito_1         =      calculo.ToString();
@@ -59,7 +63,7 @@ namespace aula6_validcao_cnpj
                  calculo           =       11 - resto;
 
 
-            if(  calculo >2){
+            if(  calculo <2){
                  digito_2          =       "0";
             }else{
                  digito_2          =       calculo.ToString();
